@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+		<html>
+		<head>
+      <meta charset="utf-8">
+      <title>Ton Formation</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel = "icon" href = "images/clemence.jpg" type = "clemence/jpg">
+<style type="text/css">
+*{
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+  font-family: 'Perpetua';
+}
+body{
+ 	width: 100%;
+	height: 100vh;
+	background-image: url(altu.JPG);
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	box-sizing: border-box;
+
+}
+nav{
+  background: #1b1b1b;
+}
+nav:after{
+  content: '';
+  clear: both;
+  display: table;
+}
+nav .logo{
+  float: left;
+  color: beige;
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 80px;
+  padding-left: 50px;
+}
+
+nav ul{
+  float: right;
+  margin-right: 40px;
+  list-style: none;
+  position: relative;
+}
+nav ul li{
+  display: inline-block;
+  background: #1b1b1b;
+  margin: 0 5px;
+}
+nav ul li a{
+  color: white;
+  line-height: 70px;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 15px;
+}
+nav ul li a:hover{
+  color: rgb(248, 207, 230);
+  border-radius: 5px;
+  box-shadow:  -3px -3px 7px #ffffff73,
+				3px 3px 5px rgba(94,104,121,0.288);
+}
+nav ul ul li a:hover{
+  box-shadow: none;
+}
+nav ul ul{
+  position: absolute;
+  top: 90px;
+  border-top: 3px solid cyan;
+  opacity: 0;
+  visibility: hidden;
+  transition: top .3s;
+}
+nav ul ul ul{
+  border-top: none;
+}
+nav ul li:hover > ul{
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+}
+nav ul ul li{
+  position: relative;
+  margin: 0px;
+  width: 150px;
+  float: none;
+  display: list-item;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+nav ul ul li a{
+  line-height: 50px;
+}
+nav ul ul ul li{
+  position: relative;
+  top: -60px;
+  left: 150px;
+}
+.show,.icon,input{
+  display: none;
+}
+.fa-plus{
+  font-size: 15px;
+  margin-left: 40px;
+}
+@media all and (max-width: 968px) {
+  nav ul{
+    margin-right: 0px;
+    float: left;
+  }
+  nav .logo{
+    padding-left: 30px;
+    width: 100%;
+  }
+  .show + a, ul{
+    display: none;
+  }
+  nav ul li,nav ul ul li{
+    display: block;
+    width: 100%;
+  }
+  nav ul li a:hover{
+    box-shadow: none;
+  }
+  .show{
+    display: block;
+    color: white;
+    font-size: 18px;
+    padding: 0 20px;
+    line-height: 70px;
+    cursor: pointer;
+  }
+  .show:hover{
+    color: cyan;
+  }
+  .icon{
+    display: block;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 40px;
+    line-height: 70px;
+    cursor: pointer;
+    font-size: 25px;
+  }
+  nav ul ul{
+    top: 70px;
+    border-top: 0px;
+    float: none;
+    position: static;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+  }
+  nav ul ul a{
+    padding-left: 40px;
+  }
+  nav ul ul ul a{
+    padding-left: 80px;
+  }
+  nav ul ul ul li{
+    position: static;
+  }
+  [id^=btn]:checked + ul{
+    display: block;
+  }
+  nav ul ul li{
+    border-bottom: 0px;
+  }
+  span.cancel:before{
+    content: '\f00d';
+  }
+}
+.content{
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+header{
+  font-size: 35px;
+  font-weight: 600;
+  padding: 10px 0;
+}
+p{
+  font-size: 30px;
+  font-weight: 500;
+}
+
+
+h1
+{
+    margin: 20px 0px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.scrollBox
+{
+    float: right;
+    width: 400px;
+    height: 85vh;
+    margin: 20px 5px;
+    margin-top: 0px;
+    overflow-y: scroll;
+    background: rgba(27, 37, 33, 0.5);
+    border-radius: 5px;
+}
+.container .video
+{
+    float: left;
+    width: 860px;
+    height: 100%;
+    margin: 25px 20px;
+    border-radius: 10px;
+}
+video
+{
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    outline: none;
+}
+.box
+{
+    overflow: hidden;
+    max-width: 400px;
+    margin: 10px 10px;
+    display: inline-block;
+    position: relative;
+    border-radius: 10px;
+}
+.box:hover
+{
+    box-shadow: 0px 5px 30px 0px #121212;
+}
+.box img
+{
+    width: 100%;
+    display: block;
+}
+.btn
+{
+    display: inline-block;
+    text-decoration: none;
+    background:#2e8d86;
+    color: #fff;
+    padding: 0.5em 1.2em;
+    margin-top: 0.8rem;
+    margin-left: 10px;
+    position: relative;
+    transition: 0.2s ease-in-out;
+    border-radius: 3px;
+}
+.btn:hover
+{
+    box-shadow: 10px 15px 20px  0px #000000;
+    transform: scale(1.3);
+}
+h3
+{
+    color: #fff;
+    margin: 0 10px;
+}
+.box .box-content
+{
+    position: absolute;
+    top: 80%;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+    z-index: 2;
+    transition: all .5s ease-in-out;
+}
+.box::after
+{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    z-index: 1;
+    transform: scaleY(0);
+    transform-origin: 100% 100%;
+    background: rgba(0, 0, 0, 0.73);
+    transition: all .3s ease-in-out;
+}
+.box:hover .box-content
+{
+    opacity: 1;
+    top: 30%;
+}
+.box:hover::after
+{
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+.scrollTop
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 100000;
+}
+@media(max-width: 865px){
+    .container .video
+    {
+        width: 95%;
+    }
+}
+@media(max-width: 775px){
+    .container .video
+    {
+        width: 95%;
+    }
+}
+@media(max-width: 500px){
+    .container .video
+    {
+        width: 97%;
+    }
+}
+			
+			</style>
+		</head>
+   
+   <body>
+
+      <nav>
+         <div class="logo">
+            Ton Formation
+         </div>
+         <label for="btn" class="icon">
+         <span class="fa fa-bars"></span>
+         </label>
+         <input type="checkbox" id="btn">
+         <ul>
+            <li><a href="formation.html">Acceuille</a></li>
+           
+            <li>
+               <label for="btn-2" class="show">Programmation</label>
+               <a href="programmation.html">Programmation</a>
+               <input type="checkbox" id="btn-2">
+               
+            </li>
+             <li>
+               <label for="btn-2" class="show">Base de donnée</label>
+               <a href="base de donnée.html">Base de donnée</a>
+               <input type="checkbox" id="btn-2">
+              
+            </li>
+             <li>
+               <label for="btn-2" class="show">SIG</label>
+               <a href="SIG.html">SIG</a>
+               <input type="checkbox" id="btn-2">
+               
+            </li>
+            <li><a href="mesRealisations.html">Mes Réalisations</a></li>
+            <li><a href="me.html">About me</a></li>
+         </ul>
+      </nav>
+      <div class="container">
+        <h1>Cours de PostgreSQL & PostGIS</h1>
+        <div id="video_player">
+            <video controls poster="" class="video" id="video">
+                <source src="po/1.mp4" type="video/mp4">
+                <source src="./media/1.m4v" type="video/mp4">
+            </video>
+
+            <div class="scrollBox">
+                <div class="box">
+                  <img src="./img/po.png">
+                    <div class="box-content">
+                      <h3>Lesson : 1</h3>
+                        <a href="po/1.mp4" class="btn">Regarde</a>
+                    </div>
+                </div>
+                <div class="box">
+                  <img src="./img/po.png">
+                    <div class="box-content">
+                      <h3>Lesson : 2</h3>
+                        <a href="po/2.mp4" class="btn">Regarde</a>
+                    </div>
+                </div>
+                <div class="box">
+                  <img src="./img/po.png">
+                    <div class="box-content">
+                      <h3>Lesson : 3</h3>
+                        <a href="po/3.mp4" class="btn">Regarde</a>
+                    </div>
+                </div>
+                <div class="box">
+                  <img src="./img/po.png">
+                    <div class="box-content">
+                      <h3>Lesson : 4</h3>
+                        <a href="po/4.mp4" class="btn">Regarde</a>
+                    </div>
+                </div>
+                <div class="box">
+                  <img src="./img/po.png">
+                    <div class="box-content">
+                      <h3>Lesson : 5</h3>
+                        <a href="po/5.mp4"class="btn">Regarde</a>
+                    </div>
+                </div>
+                <div class="box">
+                  <img src="./img/po.png">
+                    <div class="box-content">
+                      <h3>Lesson : 6</h3>
+                        <a href="po/6.mp4" class="btn">Regarde</a>
+                    </div>
+                </div>
+                <div class="box">
+                  <img src="./img/po.png">
+                    <div class="box-content">
+                      <h3>Lesson : 7</h3>
+                        <a href="po/7.mp4" class="btn">Regarde</a>
+                    </div>
+                </div>
+                <div class="box">
+                  <img src="./img/po.png">
+                    <div class="box-content">
+                      <h3>Lesson : 8</h3>
+                        <a href="po/8.mp4" class="btn">Regarde</a>
+                    </div>
+                </div>
+                <div class="box">
+                  <img src="./img/po.png">
+                    <div class="box-content">
+                      <h3>Lesson : 9</h3>
+                        <a href="po/9.mp4" class="btn">Regarde</a>
+                    </div>
+                </div>
+                <div class="box">
+                  <img src="./img/po.png">
+                    <div class="box-content">
+                      <h3>Lesson : 10</h3>
+                        <a href="po/10.mp4" class="btn">Regarde</a>
+                    </div>
+                </div>
+
+
+                <div class="box">
+                  <img src="./img/po.png">
+                    <div class="box-content">
+                      <h3>Lesson : 11</h3>
+                        <a href="po/11.mp4" class="btn">Regarde</a>
+                    </div>
+                </div>
+                <div class="box">
+                  <img src="./img/po.png">
+                    <div class="box-content">
+                      <h3>Lesson : 12</h3>
+                        <a href="po/12.mp4" class="btn">Regarde</a>
+                    </div>
+                </div>
+                <div class="box">
+                  <img src="./img/po.png">
+                    <div class="box-content">
+                      <h3>Lesson : 13</h3>
+                        <a href="po/13.mp4" class="btn">Regarde</a>
+                    </div>
+                </div>
+                <div class="box">
+                  <img src="./img/po.png">
+                    <div class="box-content">
+                      <h3>Lesson : 14</h3>
+                        <a href="po/14.mp4" class="btn">Regarde</a>
+                    </div>
+                </div>
+                <div class="box">
+                  <img src="./img/po.png">
+                  <div class="box-content">
+                    <h3>Lesson : 15</h3>
+                      <a href="po/15.mp4" class="btn">Regarde</a>
+                  </div>
+              </div>
+              <div class="box">
+                <img src="./img/po.png">
+                <div class="box-content">
+                  <h3>Lesson : 16</h3>
+                    <a href="po/16.mp4" class="btn">Regarde</a>
+                </div>
+            </div>
+            <div class="box">
+              <img src="./img/po.png">
+                <div class="box-content">
+                  <h3>Lesson : 17</h3>
+                    <a href="po/17.mp4" class="btn">Regarde</a>
+                </div>
+            </div>
+            <div class="box">
+              <img src="./img/po.png">
+                <div class="box-content">
+                  <h3>Lesson : 18</h3>
+                    <a href="po/18.mp4" class="btn">Regarde</a>
+                </div>
+            </div>
+            <div class="box">
+              <img src="./img/po.png">
+                <div class="box-content">
+                  <h3>Lesson : 19</h3>
+                    <a href="po/19.mp4" class="btn">Regarde</a>
+                </div>
+            </div>
+            <div class="box">
+              <img src="./img/po.png">
+              <div class="box-content">
+                <h3>Lesson : 20</h3>
+                  <a href="po/20.mp4" class="btn">Regarde</a>
+              </div>
+          </div>
+
+
+
+
+                <div class="box">
+                  <img src="./img/po.png">
+                  <div class="box-content">
+                    <h3>Lesson : 21</h3>
+                      <a href="po/21.mp4" class="btn">Regarde</a>
+                  </div>
+              </div>
+              <div class="box">
+                <img src="./img/po.png">
+                  <div class="box-content">
+                    <h3>Lesson : 22</h3>
+                      <a href="po/22.mp4" class="btn">Regarde</a>
+                  </div>
+              </div>
+              
+              <div class="box">
+                <img src="./img/po.png">
+                  <div class="box-content">
+                    <h3>Lesson : 23</h3>
+                      <a href="po/23.mp4" class="btn">Regarde</a>
+                  </div>
+              </div>
+              <div class="box">
+                <img src="./img/po.png">
+                  <div class="box-content">
+                    <h3>Lesson : 24</h3>
+                      <a href="po/24.mp4" class="btn">Regarde</a>
+                  </div>
+              </div>
+              <div class="box">
+                <img src="./img/po.png">
+                  <div class="box-content">
+                    <h3>Lesson : 25</h3>
+                      <a href="po/25.mp4" class="btn">Regarde</a>
+                  </div>
+              </div>
+              <div class="box">
+                <img src="./img/po.png">
+                  <div class="box-content">
+                    <h3>Lesson : 26</h3>
+                      <a href="po/26.mp4" class="btn">Regarde</a>
+                  </div>
+              </div>
+              <div class="box">
+                <img src="./img/po.png">
+                  <div class="box-content">
+                    <h3>Lesson : 27</h3>
+                      <a href="po/27.mp4" class="btn">Regarde</a>
+                  </div>
+              </div>
+              <div class="box">
+                <img src="./img/po.png">
+                  <div class="box-content">
+                    <h3>Lesson : 28</h3>
+                      <a href="po/28.mp4" class="btn">Regarde</a>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script type="text/javascript">
+        let anchors = document.querySelectorAll('div .btn');
+    let links = [...anchors];
+    
+    for (let i=0; i<links.length; i++) {
+        links[i].onclick = handler;
+    }
+    function handler(e) {
+        e.preventDefault();
+        let videotarget = this.getAttribute("href");
+        let filename = videotarget.substr(0, videotarget.lastIndexOf('.'));
+        let video = document.getElementById("video");
+        video.removeAttribute("poster");
+        let source = document.querySelectorAll("#video_player video source");
+        source[0].src = filename + ".mp4";
+        source[1].src = filename + ".m4v";
+        video.load();
+        video.play();
+    }
+    </script>
+   </body>
+</html>

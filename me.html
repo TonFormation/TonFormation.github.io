@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+          <meta charset="utf-8"> 
+          <meta http-equiv="X-UA-Compatible" content="IE-edge">
+          <meta name="viewport" content="width=device-width, intial-scale=1.0">
+          <title>About Me</title>
+          <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+          <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+		  <link rel = "icon" href = "images/clemence.jpg" type = "clemence/jpg">
+            <style>
+                *{
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+  font-family: 'Perpetua';
+} 
+                nav{
+  background: #1b1b1b;
+}
+nav:after{
+  content: '';
+  clear: both;
+  display: table;
+}
+nav .logo{
+  float: left;
+  color: beige;
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 80px;
+  padding-left: 50px;
+}
+
+nav ul{
+  float: right;
+  margin-right: 40px;
+  list-style: none;
+  position: relative;
+}
+nav ul li{
+  display: inline-block;
+  background: #1b1b1b;
+  margin: 0 5px;
+}
+nav ul li a{
+  color: white;
+  line-height: 70px;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 15px;
+}
+nav ul li a:hover{
+  color: rgb(248, 207, 230);
+  border-radius: 5px;
+  box-shadow:  -3px -3px 7px #ffffff73,
+				3px 3px 5px rgba(94,104,121,0.288);
+}
+nav ul ul li a:hover{
+  box-shadow: none;
+}
+nav ul ul{
+  position: absolute;
+  top: 90px;
+  border-top: 3px solid cyan;
+  opacity: 0;
+  visibility: hidden;
+  transition: top .3s;
+}
+nav ul ul ul{
+  border-top: none;
+}
+nav ul li:hover > ul{
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+}
+nav ul ul li{
+  position: relative;
+  margin: 0px;
+  width: 150px;
+  float: none;
+  display: list-item;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+nav ul ul li a{
+  line-height: 50px;
+}
+nav ul ul ul li{
+  position: relative;
+  top: -60px;
+  left: 150px;
+}
+.show,.icon,input{
+  display: none;
+}
+.fa-plus{
+  font-size: 15px;
+  margin-left: 40px;
+}
+@media all and (max-width: 968px) {
+  nav ul{
+    margin-right: 0px;
+    float: left;
+  }
+  nav .logo{
+    padding-left: 30px;
+    width: 100%;
+  }
+  .show + a, ul{
+    display: none;
+  }
+  nav ul li,nav ul ul li{
+    display: block;
+    width: 100%;
+  }
+  nav ul li a:hover{
+    box-shadow: none;
+  }
+  .show{
+    display: block;
+    color: white;
+    font-size: 18px;
+    padding: 0 20px;
+    line-height: 70px;
+    cursor: pointer;
+  }
+  .show:hover{
+    color: cyan;
+  }
+  .icon{
+    display: block;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 40px;
+    line-height: 70px;
+    cursor: pointer;
+    font-size: 25px;
+  }
+  nav ul ul{
+    top: 70px;
+    border-top: 0px;
+    float: none;
+    position: static;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+  }
+  nav ul ul a{
+    padding-left: 40px;
+  }
+  nav ul ul ul a{
+    padding-left: 80px;
+  }
+  nav ul ul ul li{
+    position: static;
+  }
+  [id^=btn]:checked + ul{
+    display: block;
+  }
+  nav ul ul li{
+    border-bottom: 0px;
+  }
+  span.cancel:before{
+    content: '\f00d';
+  }
+}
+
+.model{
+	height:460px;
+	position:absolute;
+	bottom:20px;
+	left:75%;
+	transform: translateX(-60%);
+}
+.text-container p:nth-child(1){
+	font-family: calibri;
+	font-weight:bold;
+	color:#6d6d6d;
+	font-size:22px;
+}
+.text-container p:nth-child(2){
+	font-family:calibri;
+	font-weight:bold;
+	letter-spacing:1px;
+	color:#1a1a1a;
+	font-size:60px;
+	
+}
+.text-container p:nth-child(3){
+	font-family: myriad pro regular;
+	color: #403e3e;
+	font-size:30px;
+	line-height:30px;
+}
+ 
+.text-container p{
+	margin:45px 0px 25px;
+	line-height:0px;
+}
+.text-container button{
+	width:130px;
+	height:42px;
+	border-radius:10px;
+	font-family:calibri;
+	font-weight:bold;
+	font-size: 14px;
+	outline:none;
+	margin:0px 10px;
+	
+}
+.text-container{
+	position: absolute;
+	left:13%;
+	top:40%;
+	transform:translate(-13%,-42%);
+}
+.hire-btn{
+	border:2px solid #373636;
+	color:#373636;
+	background-color:transparent;
+	
+}
+.down-cv{
+	background-color:#0B0B0B;
+	color:#fff;	
+	border:none;
+}
+button:active{
+	transform:scale(1.1);
+}
+
+
+.services{
+	height:600px;
+	background-color:#ffffff;
+	padding: 2% 10% 0px 10%;
+}
+.services-text p:nth-child(1){
+	font-family: calibri;
+	font-weight:bold;
+	color:#1d1c1c;
+	font-size:30px;
+	line-height:0px;
+  padding: 35px 0 0 0 ;
+}
+.services-text p:nth-child(2){
+	font-family:calibri;
+	font-weight: bold;
+	color:#3e3d3d;
+	font-size: 15px;
+	line-height: 5px;
+  padding: 35px 0 0 0 ;
+}
+.services-text p:nth-child(3){font-family:calibri;
+color:#7e7d7d;
+padding: 35px 0 0 0 ;
+}
+.services-text{
+	width: 500px;
+	margin: 500px 0px 0px 0px;
+  padding: 35px 0 0 0 ;
+}
+.box-container{
+	display:flex;
+	justify-content:space-between;
+}
+.box-1,.box-2,.box-3{
+	width: 300px;
+	height:320px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	box-shadow:2px 2px 18px rgba(0,0,0,0.3);
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+	margin: 0px 4px;
+	color: rgb(252, 143, 9);
+	
+}
+ 
+.box-1{
+	background-image:url("./images/infraworks007.jpg");
+}
+.box-2{
+	background-image:url("./images/800wm.jpeg");
+}
+.box-3{
+	background-image: url("./images/Capture.jpg");
+}
+.box-1 span,
+.box-2 span,
+.box-3 span{
+	width:40px;
+	height:40px;
+	border-radius:50%;
+	background-color:#ffffff;
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	font-family: calibri;
+	font-weight: bold;
+}
+.box-1 p:nth-child(2),
+.box-2 p:nth-child(2),
+.box-3 p:nth-child(2){
+	color:#FFFFFF;
+	font-family: calibri;
+	font-size: 23px;
+	line-height:0px;
+}
+.box-1 p:nth-child(3),
+.box-2 p:nth-child(3),
+.box-3 p:nth-child(3){
+	font-family: calibri;
+	color:#8F8F8F;
+	text-align:center;
+	width: 230px;
+	margin:0px 0px 20px 0px;
+}
+.box-1 button,
+.box-2 button,
+.box-3 button{
+	width:100px;
+	height:30px;
+	background-color:#FFFFFF;
+	border:none;
+	outline: none;
+	border-radius:5px;
+}
+
+
+
+
+footer p{
+	font-family: calibri;
+}
+footer p:nth-child(1){
+	font-size: 30px;
+	font-weight:bold;
+	color:#191919;
+	line-height:10px;
+}
+footer p:nth-child(2){
+	font-size: 16px;
+	color:#7e7d7d;
+	width:600px;
+	text-align: center;
+}
+footer{
+	height:300px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+  margin-top: 500px;
+}
+.social-icons a{
+	width:40px;
+	height:40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color:#e6e3e3;
+	margin:20px 10px;
+	border-radius:50%;
+}
+.social-icons{
+	display: flex;
+	
+}
+.social-icons i,.social i{
+	color:#000000;
+}
+.social-icons a:hover{
+	background-color:#000000;
+	box-shadow:2px 2px 12px rgba(0,0,0,0.2);
+	transition:all ease 0.5s;
+}
+.social-icons a:hover i,
+.social a:hover i{
+	color:#FFFFFF;
+	transition:all ease 0.5s;
+}
+ 
+.copyright{
+	color:#565555;
+	font-size: 12px;
+	position: absolute;
+	left:50%;
+	bottom:10px;
+	transform: translateX(-50%);
+}
+.social{
+	position: fixed;
+	top:50%;
+	right:0px;
+	transform:translateY(-50%);
+}
+.social a{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width:50px;
+	height:50px;
+	margin:0px;
+	padding: 0px;
+	line-height:0px;
+	background-color:#FFFFFF;
+	border:1px solid #CBCBCB;
+	box-shadow:2px 2px 12px rgba(0,0,0,0.2);
+}
+.social a:hover{
+	background-color:#000000;
+	transition:all ease 0.5s;
+}
+.social i{
+	font-size:20px;
+	color:#2B2B2B;
+}
+
+            </style>
+        </head>
+        <body>
+            <nav>
+                <div class="logo">
+                   Ton Formation
+                </div>
+                <label for="btn" class="icon">
+                <span class="fa fa-bars"></span>
+                </label>
+                <input type="checkbox" id="btn">
+                <ul>
+                   <li><a href="formation.html">Acceuille</a></li>
+                  
+                   <li>
+                      <label for="btn-2" class="show">Programmation</label>
+                      <a href="programmation.html">Programmation</a>
+                      <input type="checkbox" id="btn-2">
+                      
+                   </li>
+                    <li>
+                      <label for="btn-2" class="show">Base de donnée</label>
+                      <a href="base de donnée.html">Base de donnée</a>
+                      <input type="checkbox" id="btn-2">
+                     
+                   </li>
+                    <li>
+                      <label for="btn-2" class="show">SIG</label>
+                      <a href="SIG.html">SIG</a>
+                      <input type="checkbox" id="btn-2">
+                      
+                   </li>
+                   <li><a href="mesRealisations.html">Mes Réalisations</a></li>
+                   <li><a href="me.html">About me</a></li>
+                </ul>
+             </nav>
+
+
+             <!--text----------------------->
+		<div class="text-container">
+			<p>Salut,</p>
+		    <p>Mon nom est Fathi</p>
+			<p>je suis un géomaticien ,cartographe sigiste,<br>dévéloppeur et<br> Administrateur de base de donnée</p>
+			<button class="hire-btn" onclick="window.location.href='mesRealisations.html'">Mes projets Réalises en PDF</button>
+		</div>
+	<!--model---------------------->
+	<img alt="model" class="model" src="images/Djibouti.gif">
+
+   <!--services-container---------------------------->
+	<div class="services ">
+		<!--text-->
+		<div class="services-text ">
+	<p>Mes projets</p>
+	<p>Ici,ci-dessous,vous trouverez mes grands projets,tel que <br><br><br>des projets tutores,<br><br><br>et un rapport de stage<br><br><br> que j'ai réalise au fil de mon formation de licence</p><br><br>
+			</div>
+		<div class="box-container">
+		<!--1-->
+			<div class="box-1">
+			<span>1</span><br>
+			<p class="heading">Rapport de stage : L3</p>
+			<p class="details">j'ai réalisé un stage au service de l'agence Djiboutien de routier ,où j'étais un stagiaire topographe</p><br><br>
+			<button>Savoir plus et <a href="Rapport de Stage.pdf">Télécharge</a></button>
+			</div>
+	   <!-2-->
+			<div class="box-2">
+			<span>2</span><br>
+			<p class="heading">Projet tutore : L3 </p>
+			<p class="details">j'ai effectue un projet concernant ,d'une mise en place d'une base de donnée spatiale,à mon dernière année de l'université</p><br><br>
+			<button>Savoir plus et <a href="Rapport tutore.pdf">Télécharge</a></button>
+			</div> 
+		<!-3------------->
+			<div class="box-3">
+			<span>3</span><br>
+			<p class="heading">Projet tutore : L2</p>
+			<p class="details">j'ai traité un projet concernant,d'une cartographie et de la mise en place d'une base de donnée spatiale sur les accidents routières de Djibouti</p><br><br>
+			<button>Savoir plus et <a href="UD.pdf">Télécharge</a></button>
+			</div>
+		</div>
+	</div>
+
+
+  <!--footer--------------->
+ <footer>
+  <!--heading-->
+ <p>La persévérance, c'est ce qui rend l'impossible possible, le possible probable et le probable réalisé  :)</p><br><br>
+  <!--paragraph-->
+  <p>J'ai tiens vraiment à vous remercie et à vous passe mes meilleurs salutations  :)</p><br><br>
+ 
+  <!--copyright-->
+</footer>
+ <!--social-attach-bar-->
+ <div class="social">
+ <a href="http://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+ <a href="http://www.twitter.com"><i class="fab fa-twitter"></i></a>
+ <a href="http://www.instagram.com"><i class="fab fa-instagram"></i></a>
+ <a href="http://www.youtube.com"><i class="fab fa-youtube"></i></a>
+ </div>
+        </body>
+    </html>
